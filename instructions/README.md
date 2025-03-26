@@ -146,6 +146,8 @@ node server.js
 
 >Tip: To run your server without having a console open constantly, you can use the __global__ npm package [pm2](https://pm2.keymetrics.io/). Use the command `npm i -g pm2`. The `-g` flag tells npm to install the package globally, as a command-line tool (not to your `package.json`). Run your server using `pm2 start server.js`. If you need to stop it, run `pm2 stop server.js` or `pm2 stop all`. 
 
+done
+
 ### Step 4: Modify Your Vue Project
 
 So now you have a working Vue app! The next step is to modify the project to make it do what you want it to do.
