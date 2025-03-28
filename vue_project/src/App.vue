@@ -45,6 +45,7 @@ export default {
   },
   data:()=> ({
     user: {
+      UserName: 'hello'
     },
     defaultUser: {  
       UserName: 'hello'
@@ -57,7 +58,7 @@ export default {
         // Also you might want to still return an object identical
         // to the `default` below if the fetch() fails
         try {
-        const response = await fetch("https://your-api.com/user", {
+        const response = await fetch(`${VUE_APP_API_ORIGIN}/callapi/user`, {
           method: "GET",
           credentials: "include",
           headers: {
