@@ -36,7 +36,7 @@
         <v-list dense>
   
           <!-- TODO: Add an :href attribute to this tag so that clicking this link will log a user out -->
-          <v-list-item :href="`${VUE_APP_API_ORIGIN}/logout`" link>
+          <v-list-item :href="`${apiOrigin}/api/v1/auth/logout?returnTo=http://localhost:8080/login`" link>
   
             <!-- HINT: When there's a colon before an attribute, that's a short-hand for v-bind: which means -->
             <!-- that in the quotation marks of that attribute, you can put JavaScript! That means you can -->
@@ -67,7 +67,7 @@
     },
     data: () => ({
       drawer: false,
-       loggedIn: false,
+      isLoggedIn: false,
       // TODO: Get the api's url origin from process.env and set it to a variable here
       apiOrigin: process.env.VUE_APP_API_ORIGIN
     }
@@ -77,20 +77,20 @@
           try{
              const response = await authenticated()
              if (response == false){
-              this.loggedIn = false
+              this.isLoggedIn = false
              }
              else{
-              this.loggedIn = true
+              this.isLoggedIn = true
              }
             }
             catch(error){
             console.error(error.message)
-            this.loggedIn = false
+            this.isLoggedIn = false
             }
     }
     },
    mounted(){
-        this.getLoggedIn()
+        this.getLoggedIn();
    } 
   
   }

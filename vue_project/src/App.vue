@@ -44,13 +44,16 @@ export default {
     AppBar,
   },
   data:()=> ({
-    user: {
-      UserName: 'hello'
-    },
+    user: {},
     defaultUser: {  
       UserName: 'hello'
     }}
     ),
+    computed: {
+      currentUser() {
+        return Object.keys(this.user).length > 0 ? this.user : this.defaultUser;
+      }
+    },
     methods: {
      async getUser(){ //this function updates the user variable with a fetch request
        // TODO: Use fetch() to get the user from your API
@@ -58,7 +61,7 @@ export default {
         // Also you might want to still return an object identical
         // to the `default` below if the fetch() fails
         try {
-        const response = await fetch(`${VUE_APP_API_ORIGIN}/callapi/user`, {
+        const response = await fetch(`${process.env.VUE_APP_API_ORIGIN}/api/v1/user`, {
           method: "GET",
           credentials: "include",
           headers: {

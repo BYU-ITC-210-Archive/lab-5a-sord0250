@@ -1,7 +1,7 @@
 <template>
     <div id='login'>
       <h1>Welcome to your Task List!</h1>
-      <v-btn :href="`${apiOrigin}/api/v1/auth/google?returnTo=${encodeURIComponent(location.origin)}`" color="primary">
+      <v-btn :href="`${apiOrigin}/api/v1/auth/google?returnTo=http://localhost:8080`" color="primary">
         <v-icon left>mdi-google</v-icon>
         Log In with Google
       </v-btn>

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import { authenticated } from '@/util'
+import Home from '../views/Home.vue'
 import Login from '@/views/Login.vue'
 
 const checkAuth = async (to, from, next) => {
@@ -22,8 +22,8 @@ const checkAuth = async (to, from, next) => {
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView,
+    name: 'Home',
+    component: Home,
     beforeEnter: checkAuth,
     props: true
   },
