@@ -13,7 +13,7 @@
     
 
     <v-main>
-      <router-view :user="user"></router-view>
+      <router-view :user="currentUser"></router-view>
     </v-main>
 
   </v-app>
