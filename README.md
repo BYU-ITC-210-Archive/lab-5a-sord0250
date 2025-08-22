@@ -1,1 +1,1 @@
-Your ReadMe goes here.
+This was a complex project that ended up not deploying to live servers in the end. However, this was a problem that most students in the BYU ITC210 class ran into. The vue_project folder contains the code I worked on and changed.
